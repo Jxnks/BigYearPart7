@@ -15,7 +15,11 @@ public class Main {
             System.out.println("?");
             String command = scanner.nextLine();
 
-            switch (command) {
+            if (command.toLowerCase(Locale.ROOT).trim().equals("quit")) {
+                break;
+            }
+
+            switch (command.toLowerCase(Locale.ROOT)) {
                 case "quit":
                     break;
 
@@ -26,6 +30,7 @@ public class Main {
                     System.out.println("Name in Latin: ");
                     String latinName = scanner.nextLine();
                     Birds recipe = new Birds(name, latinName);
+                    break;
 
 
                 case "observation":
@@ -40,20 +45,24 @@ public class Main {
                             }
 
                         }
+                    break;
 
 
                 case "all":
                     for (Birds e : birds){
                         System.out.println(e);
                     }
+                    break;
 
 
                 case "one":
                     System.out.println(birds.indexOf(0));
+                    break;
 
 
                 default:
                     System.out.println("Unknown command");
+                    break;
 
             }
 
