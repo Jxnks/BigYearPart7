@@ -25,11 +25,11 @@ public class Birds {
         return this.latinName;
     }
 
-    public int getObservations(){
+    public int getObservations() {
         return this.observations;
     }
 
-    public void addObservation(){
+    public void addObservation() {
         observations++;
     }
 
@@ -37,4 +37,11 @@ public class Birds {
     public boolean nameContains(String searchWord) {
         return this.name.contains(searchWord);
     }
+
+
+    @Override
+    public String toString() {
+        return name + " (" + latinName + "): " + observations + " observations";
+    }
 }
+
