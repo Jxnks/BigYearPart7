@@ -28,14 +28,18 @@ public class Main {
                 System.out.println("Bird?");
                 String searchWord = scanner.nextLine();
                 // if bird database does not contain searchWord.toLowerCase
+
+                /*for (int i = 0; i < birds.size(); i++){
+                        // other option
+                }*/
                 for (Birds e : birds) {
-                    if (e.getName().equals(searchWord.toLowerCase(Locale.ROOT))) {
+                    if (e.getName().toLowerCase(Locale.ROOT).equals(searchWord.toLowerCase(Locale.ROOT))) {
                         e.addObservation();
                         break;
-                    } else {
-                        System.out.println("Not a bird");
+                        } /*else if ((e.getName().toLowerCase(Locale.ROOT)).equals(searchWord.toLowerCase(Locale.ROOT)))){
+                        System.out.println("Not a bird");*/
                     }
-                }
+
             } else if (command.toLowerCase(Locale.ROOT).trim().equals("all")) {
                 for (Birds e : birds) {
                     System.out.println(e.toString());
@@ -43,11 +47,20 @@ public class Main {
             } else if (command.toLowerCase(Locale.ROOT).trim().equals("one")) {
                 System.out.println("Bird?");
                 String searchWord = scanner.nextLine();
+                int i = 0;
                 for (Birds e : birds) {
-                    if (e.getName().equals(searchWord.toLowerCase(Locale.ROOT))) {
+
+                    if (e.getName().toLowerCase(Locale.ROOT).equals(searchWord.toLowerCase(Locale.ROOT))) {
                         System.out.println(e.toString());
                         break;
                     }
+
+                    i++;
+
+                    if (i == birds.size()) {
+                        System.out.println("Not a bird"); // working out bug
+                    }
+
                 }
 
 
